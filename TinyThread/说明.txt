@@ -1,0 +1,16 @@
+TinyThread++ 实现了C++0x 线程管理类库的一个兼容子集。
+
+Portable Threads
+
+Need portable threads for your C++ app? Is C++11 unavailable for your target compiler(s)? Is Boost too large?
+
+Then you need TinyThread++!
+
+TinyThread++ implements a fairly compatible subset of the C++11 thread management classes.
+Features
+Open source!
+Very portable (it has been tested under Windows, Mac OS X, Linux, OpenSolaris and FreeBSD, and should work under most POSIX compatible systems).
+Fairly faithful to the C++11 standard (see the January 2012 draft: N3337, chapter 30).
+Minimalistic (no external dependencies, and easy to include in a project).
+Minimal overhead — most functions generate compact inline code.
+As a bonus, the library includes a very fast user space mutex class (fast_mutex).

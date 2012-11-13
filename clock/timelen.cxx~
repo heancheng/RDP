@@ -1,0 +1,39 @@
+// TimeLen.cpp: implementation of the TimeLen class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "timelen.h"
+#include <cstring>
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+TimeLen::TimeLen()
+{
+	Start();
+}
+
+TimeLen::~TimeLen()
+{
+
+}
+
+void TimeLen::Start()
+{
+	SYSTEMTIME 	stime;
+	FILETIME	ftime;
+	GetSystemTime(&stime);
+	SystemTimeToFileTime(&stime,&ftime);
+	memcpy(&m_start,&ftime,sizeof(FILETIME));
+}
+
+double TimeLen::Length()
+{
+	SYSTEMTIME 	stime;
+	FILETIME	ftime;
+	GetSystemTime(&stime);
+	SystemTimeToFileTime(&stime,&ftime);
+	memcpy(&m_finish,&ftime,sizeof(FILETIME));
+	return (double)(m_finish.QuadPart - m_start.QuadPart) / 10000000;
+}
+
