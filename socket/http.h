@@ -67,7 +67,7 @@ private:
 	} m_buff;							// socket的缓冲信息，主要用在Keep-Alive中，多个请求的信息（在socket接收的数据块中，存在跨请求的信息）
 	string m_root;						// 服务器的本地跟目录
 	string m_response;		// 额外的需要返回客户端的响应信息
-	CriticalSection *m_pCS;	// for debug ,只是用于输出数据到屏幕，避免多线程冲突混乱信息。将来可以考虑共享内存使用问题
+	CriticalSection *m_pCS;	// for debug ,VC或win32中。只是用于输出数据到屏幕，避免多线程冲突混乱信息。将来可以考虑共享内存使用问题
 public:
 	static map<string,string> m_content_type;	// 通过文件扩展名检索到的返回内容数据类型
 };
